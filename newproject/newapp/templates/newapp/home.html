@@ -1,0 +1,78 @@
+{% load static%}
+<html>
+
+<head>
+    <title>Exam</title>
+
+<body>
+    <h1>Catogery Page </h1>
+    {% for  x in category %}
+    <img alt="Image placeholder" src=" {{ x.image.url }} " height=300 width=300>
+    <img src={{x.img}}></head>
+    <h2> {{x.name}}</h2>
+    {% endfor %}
+
+
+
+    <h1>product Page </h1>
+    {% for  x in products %}
+    <img src=" {{x.image1.url}} " alt="product image" height=300 width=300>
+    <h2> {{x.name}}</h2>
+
+    <h2> {{x.price}}</h2>
+    {% endfor %}
+
+    {{ temp}}
+
+    <h3>Product</h3>
+
+
+    <form action="" method="POST" id="update_form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ temp }}
+        <div>
+            <div>
+                <label> Product Name</label>
+                {{ form1.name }}
+
+            </div>
+            <div>
+                <label> Product price</label>
+                {{ form1.price }}
+
+            </div>
+            <div>
+                <label> product image</label>
+                {{ form1.image1 }}
+
+            </div>
+            <input type="button" value="Submit"></button>
+
+
+    </form>
+
+
+
+    <h3>Catogery</h3>
+
+
+    <form action="" method="POST" id="update_form" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="row">
+            <div>
+                <label>catogory name</label>
+                {{ form2.name }}
+
+            </div>
+            <div>
+                <label>catogory image</label>
+                {{ form2.image }}
+            </div>
+            <button>Save details</button>
+
+    </form>
+
+</body>
+
+</html>
